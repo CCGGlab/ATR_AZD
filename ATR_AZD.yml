@@ -1,0 +1,35 @@
+channels:
+- conda-forge
+- bioconda
+dependencies:
+- r-base=4.0
+- r-essentials=4.0
+- bioconductor-biocinstaller 
+- bioconductor-deseq2
+- bioconductor-fgsea
+- bioconductor-scde
+- r-shinyjs
+- r-shinydashboard
+- r-venndiagram
+- r-shinycssloaders
+- r-dt
+- r-writexls
+- r-cairo
+- r-flexmix
+- r-igraph
+- r-ncdf4 
+- r-plotly 
+- r-htmlwidgets # Need to update for plotly, issues with DT have bene reported!
+- r-visnetwork
+- r-qgraph
+- r-ggrepel
+- r-svglite
+- r-gplots # heatmap2
+- python=3.7 # To avoid python conflicts with hisat2 & htseq (goes to 2.8 by default, conda version related?)
+- hisat2=2.1.0
+- htseq=0.11.2
+- r-protr
+- bioconductor-dep 
+- bioconductor-degreport
+- r-pheatmap
+- r-dendextend
