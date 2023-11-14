@@ -88,3 +88,20 @@ p<- ggplot(logFC_df, aes(x=names,y=avg)) +
 p
 ggsave("results/figs/manuscript_fig2E_DDR_CL.pdf",p, width = 178/2, height = 265/3, unit="mm")  
 
+# Other cell line order
+logFC_df$names<- factor(logFC_df$names, levels = c('SKNAS (24h)','SKNAS (6h)','SKNAS (1h)','IMR32 (24h)','IMR32 (6h)','IMR32 (1h)','NB1 (24h)','NB1 (6h)','NB1 (1h)','CLB-GE (48h)','CLB-GE (24h)','CLB-GE (1h)','CLB-BAR (48h)','CLB-BAR (24h)','CLB-BAR (1h)'))
+p<- ggplot(logFC_df, aes(x=names,y=avg)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  facet_grid(treatment~., scales="free", space="free") +
+  geom_errorbar(aes(x=names, ymin=ci_l, ymax=ci_u), width=0.4) +
+  xlab("") +
+  ylab("log2FC 276 DDR genes") +
+  theme(
+    axis.text = element_text(size=6),  
+    axis.title = element_text(size=7),
+    strip.text = element_text(size = 8)
+  )
+p
+ggsave("results/figs/manuscript_fig2E_DDR_CL_alt.pdf",p, width = 178/2, height = 265/3, unit="mm")  
+

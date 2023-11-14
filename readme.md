@@ -47,6 +47,11 @@ The main analysis, as reported in the manuscript
 source("scripts/manuscript_DDR_CL.R")
 ```
 
+## Fig. S1: other DDR responses in previous CL data
+```{r}
+source("scripts/manuscript_DDR_CL_suppl.R")
+```
+
 ## Fig. 4: PP comparison elimusertib with ceralasertib
 
 ### Panels A-D: Volcanos, venn, correlation & motif enrichment

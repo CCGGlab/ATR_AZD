@@ -94,5 +94,5 @@ p<- plot_grid(
   rel_heights = c(20,1)
 )
 
-ggsave("results/figs/manuscript_figSx_DDR_CL_suppl.pdf",p, width = 178, height = 265, unit="mm")  
+ggsave("results/figs/manuscript_figS1_DDR_CL_suppl.pdf",p, width = 178, height = 265, unit="mm")  
 

@@ -62,7 +62,7 @@ stat<- get_GSEA_stat(res_proc)
 GSEA_res<- do_fGSEA(Ha_MGI_ls, stat)
 GSEA_res$isLabel<- F
 # GSEA_res$isLabel[GSEA_res$padj< 1e-40]<- T
-GSEA_res$isLabel[1]<- T # Label top one
+GSEA_res$isLabel[1:3]<- T # Label top three
 
 p<- ggplot(GSEA_res, aes(x = NES, y = -log10(padj), key=pathway, colour=isLabel)) +
   # ggtitle(label = "Alk-F1178S;Th-MYCN") +
@@ -248,7 +248,7 @@ for(j in 1:length(CGPs)){
 # Create final figure
 ######################
 p_GSEA_panels<- plot_grid(
-  p_GSEA, p_RS_1 + scale_y_continuous(name = "Enrichment Score", limits = c(-1,0.1)),
+  p_RS_1 + scale_y_continuous(name = "Enrichment Score", limits = c(-1,0.1)),
   ncol = 2,
   labels = c("H","I"))
 
